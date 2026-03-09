@@ -227,6 +227,11 @@ for i, element in enumerate(elements, 1):
 
 - 使用`partition_pdf`替换当前`partition`函数并分别尝试用`hi_res`和`ocr_only`进行解析，观察输出结果有何变化。
 
+- 使用'hi_res'之前，要下载并配置pooplers和tesseract
+- poopler:https://github.com/oschwartz10612/poppler-windows/releases/
+- tesseract:https://github.com/UB-Mannheim/tesseract/wiki
+- 都选取最新版下载并在环境变量中配置即可（善用AI）
+
 ## 参考文献
 
 [^1]: [*Unstructured Open-Source Documentation*](https://docs.unstructured.io/open-source/)

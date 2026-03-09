@@ -209,6 +209,12 @@ for i, element in enumerate(elements, 1):
 
 > 若代码运行出现报错 `ImportError: libgl.so.1 cannot open shared object file no such file or directory`, 执行 `sudo apt-get install python3-opencv` 安装依赖库。
 
+
+
+Unstructed中的partition：能够自动识别文档类型，按照语义（类型）切分文本（正文内容；元数据etc）
+
+文档→有身份标识的组件（返回的是“语义类型+内容”的列表）
+
 **partition 函数参数解析：**
 
 - `filename`: 文档文件路径，支持本地文件路径；
@@ -217,6 +223,8 @@ for i, element in enumerate(elements, 1):
 - `url`: 可选参数，远程文档 URL，支持直接处理网络文档；
 - `include_page_breaks`: 布尔值，是否在输出中包含页面分隔符；
 - `strategy`: 处理策略，可选 "auto"、"fast"、"hi_res" 等；
+<img width="1403" height="294" alt="image" src="https://github.com/user-attachments/assets/690c8c7e-e96c-46b8-b266-1b3ff2f195a3" />
+
 - `encoding`: 文本编码格式，默认自动检测。
 
 `partition`函数使用自动文件类型检测，内部会根据文件类型路由到对应的专用函数（如PDF文件会调用`partition_pdf`）。如果需要更专业的PDF处理，可以直接使用`from unstructured.partition.pdf import partition_pdf`，它提供更多PDF特有的参数选项，如OCR语言设置、图像提取、表格结构推理等高级功能，同时性能更优。
